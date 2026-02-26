@@ -1,0 +1,49 @@
+### 1. New Customer (Creates Primary)
+# Expect: primaryContatctId: new_id, emails: [lorraine...], secondaryContactIds: []
+POST http://localhost:3000/identify
+Content-Type: application/json
+
+{
+	"email": "lorraine@hillvalley.edu",
+	"phoneNumber": "123456"
+}
+
+### 2. Same Phone, New Email (Creates Secondary)
+# Expect: primaryContatctId: 1, emails: [lorraine..., mcfly...], secondaryContactIds: [new_id]
+POST http://localhost:3000/identify
+Content-Type: application/json
+
+{
+	"email": "mcfly@hillvalley.edu",
+	"phoneNumber": "123456"
+}
+
+### 3. Same Email, Unknown Phone (Creates Secondary / Links)
+# Expect: Links via email to existing contact
+POST http://localhost:3000/identify
+Content-Type: application/json
+
+{
+	"email": "lorraine@hillvalley.edu",
+	"phoneNumber": "999999"
+}
+
+### 4. Linking Two Separate Primary Clusters (Consolidation)
+# First create a separate primary contact
+POST http://localhost:3000/identify
+Content-Type: application/json
+
+{
+	"email": "biff@hillvalley.edu",
+	"phoneNumber": "777777"
+}
+
+### 5. Now link the first cluster (lorraine/mcfly) with Biff via phone or email
+# e.g. Biff uses mcfly's email. Biff (newer) should become secondary.
+POST http://localhost:3000/identify
+Content-Type: application/json
+
+{
+    "email": "mcfly@hillvalley.edu",
+    "phoneNumber": "777777"
+}
