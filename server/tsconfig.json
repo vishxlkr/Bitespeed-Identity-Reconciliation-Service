@@ -3,11 +3,11 @@
       "target": "es2016",
       "module": "commonjs",
       "outDir": "./dist",
-      "rootDir": "server/src",
+      "rootDir": "./src",
       "strict": true,
       "esModuleInterop": true,
       "skipLibCheck": true,
       "forceConsistentCasingInFileNames": true
    },
-   "include": ["server/src/**/*"]
+   "include": ["src/**/*"]
 }
