@@ -3,6 +3,12 @@ import express, { Request, Response } from "express";
 import { PrismaClient, Contact } from "@prisma/client";
 
 const prisma = new PrismaClient();
+
+// Test DB Connection
+prisma.$connect()
+  .then(() => console.log('Connected to PostgreSQL Database'))
+  .catch((err) => console.error('Database connection failed:', err));
+
 const app = express();
 
 app.use(express.json());
@@ -153,6 +159,11 @@ app.get("/", (req, res) => {
 });
 
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-   console.log(`Server running on port ${PORT}`);
-});
+
+if (process.env.NODE_ENV !== "production") {
+   app.listen(PORT, () => {
+      console.log(`Server running on port ${PORT}`);
+   });
+}
+
+export default app;

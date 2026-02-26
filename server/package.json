@@ -6,7 +6,7 @@
    "scripts": {
       "start": "node dist/app.js",
       "dev": "nodemon src/app.ts",
-      "build": "tsc",
+      "build": "npx prisma generate && tsc",
       "db:up": "docker-compose up -d",
       "db:down": "docker-compose down",
       "prisma:generate": "prisma generate",
