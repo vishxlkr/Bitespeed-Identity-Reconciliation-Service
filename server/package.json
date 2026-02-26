@@ -10,7 +10,7 @@
       "db:up": "docker-compose up -d",
       "db:down": "docker-compose down",
       "prisma:generate": "prisma generate",
-      "prisma:migrate": "prisma migrate dev --name init"
+      "postinstall": "prisma generate"
    },
    "keywords": [],
    "author": "",
