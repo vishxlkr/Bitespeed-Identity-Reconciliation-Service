@@ -4,8 +4,14 @@ A web service that identifies and keeps track of a customer's identity across mu
 
 ## 🚀 Live Demo
 
-**Base URL:**  
-`http://3.235.68.201:3000/`
+**Frontend Dashboard:**  
+[https://bitespeed-identity-reconciliation-service.onrender.com](https://bitespeed-identity-reconciliation-service.onrender.com)
+
+**Backend API (Render - HTTPS):**  
+`https://bitespeed-identity-reconciliation-x9ea.onrender.com`
+
+**Backend API (AWS - HTTP):**  
+`http://3.235.68.201:3000`
 
 **Endpoint:**  
 `POST /identify`
@@ -13,7 +19,7 @@ A web service that identifies and keeps track of a customer's identity across mu
 ### Test with Curl
 
 ```bash
-curl -X POST http://3.235.68.201:3000/identify \
+curl -X POST https://bitespeed-identity-reconciliation-x9ea.onrender.com/identify \
   -H "Content-Type: application/json" \
   -d '{"email": "vishal@gmail.com", "phoneNumber": "1234567890"}'
 ```
