@@ -99,7 +99,7 @@ The server will start on `http://localhost:3000`.
 
 ```json
 {
-   "email": "mcfly@hillvalley.edu",
+   "email": "vishal2@gmail.com",
    "phoneNumber": "123456"
 }
 ```
@@ -110,7 +110,7 @@ The server will start on `http://localhost:3000`.
 {
    "contact": {
       "primaryContatctId": 1,
-      "emails": ["lorraine@hillvalley.edu", "mcfly@hillvalley.edu"],
+      "emails": ["vishal2@gmail.com", "vishal@gmail.com"],
       "phoneNumbers": ["123456"],
       "secondaryContactIds": [23]
    }
@@ -122,10 +122,18 @@ The server will start on `http://localhost:3000`.
 ## 📂 Project Structure
 
 ```
-server/
-├── prisma/             # Database schema & migrations
-├── src/
-│   └── app.ts          # Main application logic
-├── package.json
-└── tsconfig.json
+.
+│
+├── server/                 # Express Backend (Node + TypeScript)
+│   ├── prisma/
+│   │   └── schema.prisma   # Database Schema & Migrations
+│   ├── src/
+│   │   ├── controllers/    # Business Logic for Identity Resolution
+│   │   ├── routes/         # API Route Definitions
+│   │   ├── app.ts          # Server Entry Point
+│   │   └── prisma.ts       # Prisma Client Instance
+│   ├── package.json
+│   └── tsconfig.json
+│
+└── README.md
 ```
