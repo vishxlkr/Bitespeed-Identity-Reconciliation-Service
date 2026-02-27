@@ -123,6 +123,13 @@ The server will start on `http://localhost:3000`.
 
 ```
 .
+├── client/                 # React Frontend (Vite + Tailwind)
+│   ├── src/
+│   │   ├── App.jsx         # Identity Dashboard Component
+│   │   ├── main.jsx        # Entry Point
+│   │   └── index.css       # Global Styles (Tailwind)
+│   ├── vite.config.js      # Vite Configuration
+│   └── package.json
 │
 ├── server/                 # Express Backend (Node + TypeScript)
 │   ├── prisma/
