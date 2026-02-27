@@ -10,8 +10,8 @@ A web service that identifies and keeps track of a customer's identity across mu
 **Backend API (Render - HTTPS):**  
 `https://bitespeed-identity-reconciliation-x9ea.onrender.com`
 
-**Backend API (AWS - HTTP):**  
-`http://3.235.68.201:3000`
+<!-- **Backend API (AWS - HTTP):**
+`http://3.235.68.201:3000` -->
 
 **Endpoint:**  
 `POST /identify`
